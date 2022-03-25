@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "check availability to start selenium ..."
-for i in 4444 4445 4446; do
+for i in 4445 4446 4447; do
     echo "check port: $i availability..."
     PID=$(lsof -i :$i | tail -n +2 | awk '{print $2}')
     if [ -n "$PID" ]; then
@@ -9,7 +9,7 @@ for i in 4444 4445 4446; do
         echo "the port: $PID is killed..."
     fi
 done
-java -jar ./selenium-server-4.1.2.jar hub &
+java -jar ./selenium-server-4.1.2.jar hub --port 4445 &
 sleep 3
 java -jar ./selenium-server-4.1.2.jar node --config ./config/chrome-node.toml &
 sleep 3

@@ -1,5 +1,5 @@
 [server]
-port = 4446
+port = 4447
 
 [node]
 detect-drivers = false
@@ -7,4 +7,4 @@ detect-drivers = false
 display-name = "Firefox node"
 stereotype = "{\"browserName\": \"firefox\"}"
 max-sessions = 5
-webdriver-executable = './drivers/geckodriver.exe'
+webdriver-executable = './drivers/geckodriver'
