@@ -4,9 +4,9 @@ for i in 4444 4445 4446; do
     echo "check port: $i availability..."
     PID=$(lsof -i :$i | tail -n +2 | awk '{print $2}')
     if [ -n "$PID" ]; then
-        echo "the port: $PID is used..."
+        echo "the port: $i is used..."
         kill -9 $PID
-        echo "the port: $PID is killed..."
+        echo "the port: $i is killed..."
     fi
 done
 chmod 777 drivers/chromedriver drivers/geckodriver
