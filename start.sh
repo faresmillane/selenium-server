@@ -9,7 +9,7 @@ for i in 4444 4445 4446; do
         echo "the port: $i is killed..."
     fi
 done
-chmod 777 drivers/chromedriver drivers/geckodriver
+#chmod 777 drivers/chromedriver drivers/geckodriver
 java -jar ./selenium-server-4.1.2.jar hub --port 4444 &
 sleep 3
 java -jar ./selenium-server-4.1.2.jar node --config ./config/chrome-node.toml &
