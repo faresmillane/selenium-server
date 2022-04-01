@@ -18,7 +18,7 @@ sleep 3
 java -jar ./selenium-server-4.1.2.jar node --config ./config/chrome-node.toml &
 sleep 3
 java -jar ./selenium-server-4.1.2.jar node --config ./config/firefox-node.toml &
-sleep 3
+sleep 5
 
 if [ $(curl http://localhost:4444/status | jq -r '.value.ready') != false ]
     then
