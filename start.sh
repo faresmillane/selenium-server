@@ -22,7 +22,7 @@ sleep 5
 
 if [ $(curl http://localhost:4444/status | jq -r '.value.ready') != false ]
     then
-    echo "$yellow selenium started : Done"
+    echo "${yellow} --> selenium started : Done"
 fi
 
 exit 0
