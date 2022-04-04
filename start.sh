@@ -1,13 +1,14 @@
 #!/bin/bash
-yellow=`tput setaf 3`
+green=`tput setaf 4`
+cyan=`tput setaf 6`
 white=`tput setaf 7`
 
 echo "${white}check availability to start selenium ..."
 for i in 4444 4445 4446; do
     PID=$(netstat -ano | findStr "0.0.0.0:$i" | awk '{print $5}' | head -n 1)
     if [ -n "$PID" ]; then
-        echo "${white}the port: $i is used, tap this command in your powershell terminal to kill it :"
-        echo "--> ${yellow}taskkill /F /PID $PID"
+        echo "${white}- the port $i is used, tap this command in your ${green}<Windows PowerShell> ${white}terminal to kill it :"
+        echo "-> ${cyan}taskkill /F /PID $PID"
     fi
 done
 
@@ -21,7 +22,7 @@ else
     sleep 3
     java -jar ./selenium-server-4.1.2.jar node --config ./config/firefox-node.toml &
     sleep 20
-    echo "${yellow}selenium started : Done"
+    echo "${cyan}selenium started : Done"
 fi
 
 exit 0
