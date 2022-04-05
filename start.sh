@@ -22,7 +22,7 @@ else
     sleep 3
     java -jar ./selenium-server-4.1.2.jar node --config ./config/firefox-node.toml &
     sleep 20
-    echo "${cyan}selenium started : Done"
+    echo "${cyan}selenium started : http://localhost:4444/ui/index.html ..."
 fi
 
 exit 0
